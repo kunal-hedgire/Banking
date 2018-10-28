@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id</title>
+    <script>
+
+        function myfunction(){
+             location.href='/details/';
+        }
+
+        function Delfunction(){
+             location.href='/loan/';
+
+        }
+        function Upfunction(){
+             location.href='/insurance/';
+
+        }
+
+        function Infofunction(){
+             location.href='/info/';
+
+        }
+    </script>
+</head>
+Welcome{{name}}
+<body onload="onload();">
+<center>
+
+<form>
+    <center>
+
+    <label> Account Info:</label>&nbsp;<br><br><br><br>
+
+    <input type="button" value="Account_Create"  onclick="myfunction();"><br><br><br><br>
+    <input type ="button" value="get_accoount_info" onclick="Infofunction();"><br><br><br><br>
+    <input type ="button" value="Loan_Create" onclick="Delfunction();"><br><br><br><br>
+    <input type ="button" value="Insurance_create" onclick="Upfunction();"><br><br><br><br>
+
+</center>
+</form>
+
+
+
+</center>
+</body>
+</html>

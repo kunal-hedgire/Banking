@@ -1,0 +1,35 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<html>
+
+<body>
+
+<form method='POST' action="/signin/">
+    <center>
+    {% csrf_token %}
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">UserName:</label>
+    <div class="col-sm-4">
+      {{ form.userName }}
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Password:</label>
+    <div class="col-sm-4">
+      {{ form.password }}
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/register/">Register</a>
+    </div>
+  </div>
+
+
+    </center>
+</form>
+</body>
