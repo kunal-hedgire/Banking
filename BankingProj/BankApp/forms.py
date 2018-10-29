@@ -2,9 +2,9 @@ from django import forms
 from BankApp.models import Login,Register
 
 Account_Type = (
-    ('saving',  'saving'),
-    ('loan','loan'),
-    ('insurance','insurance'),
+    ('SB',  'Saving'),
+    ('LB','Loan'),
+    ('IB','Insurance'),
 
 )
 Insurance_Type = (
@@ -19,9 +19,17 @@ Loan_Type = (
     ('personal','personal'),
 
 )
+Transcation_id=(
+    ('W','withdrawn'),
+    ('D','deposite')
+)
+
+
+
+
 
 class LoginForm(forms.Form):
-    userName=forms.CharField(max_length=25)
+    customerName=forms.CharField(max_length=25)
     password = forms.CharField(required=True, label='Password', max_length=32, widget=forms.PasswordInput())
     '''
     class Meta:
@@ -38,11 +46,13 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model=Register
         fields='__all__'
-
+#bal,type,customer
 class Account_Register(forms.Form):
-    Name=forms.CharField(max_length=15)
-    Age=forms.IntegerField()
-    Type=forms.ChoiceField(choices=Account_Type, widget=forms.RadioSelect())
+    customer=forms.IntegerField()
+    accountBalance=forms.FloatField()
+    customerName=forms.CharField(max_length=15)
+    #Age=forms.IntegerField()
+    accountType=forms.ChoiceField(choices=Account_Type, widget=forms.RadioSelect())
 
 class Account_Info(forms.Form):
     id=forms.IntegerField()
@@ -56,3 +66,13 @@ class Loan_Register(forms.Form):
     Name=forms.CharField(max_length=15)
     Age = forms.IntegerField()
     lType = forms.ChoiceField(choices=Loan_Type, widget=forms.RadioSelect())
+
+
+class Withdrawn_Deposite(forms.Form):
+    accountNumber = forms.IntegerField()
+    transactionAmount=forms.IntegerField()
+    transactionMethod = forms.ChoiceField(choices=Transcation_id, widget=forms.RadioSelect())
+
+
+
+

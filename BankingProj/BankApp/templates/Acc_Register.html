@@ -9,7 +9,7 @@
     <title>ACCOUNT_REGISTER</title>
 </head>
 <body>
-<form method="POST" class="post-form" action="/info/">
+<form method="POST" class="post-form" action="/details/{{id}}">
         {% csrf_token %}
 
     <div class="container">
@@ -21,22 +21,23 @@
     </div>
   </div>
     <div class="form-group row">
-    <label class="col-sm-2 col-form-label">UserName:</label>
+    <label class="col-sm-2 col-form-label">Customer ID:{{id}}</label>
     <div class="col-sm-4">
-      {{ form.Name }}
+      <input type="hidden" name="customer"  value="{{id}}">
     </div>
   </div>
 
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Customer Age:</label>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Account Balance:</label>
     <div class="col-sm-4">
-      {{ form.Age }}
+      {{ form.accountBalance }}
     </div>
   </div>
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Account Type:</label>
     <div class="col-sm-4">
-      {{ form.Type }}
+      {{ form.accountType }}
     </div>
   </div>
 

@@ -21,13 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signin/',views.login),
     path('register/',views.register),
-    path('show/',views.DiffAcc),
-    path('details/',views.Acc_Register),
+    #path('show/',views.DiffAcc),
+    path('details/<int:id>',views.Acc_Register),
     path('info/',views.Acc_Info),
     path('get/',views.Acc_Get),
     path('insurance/',views.Insurance_Info),
     path('loan/',views.Loan_Reg),
-
+    path('with/',views.With_Depo)
 
 
 ]

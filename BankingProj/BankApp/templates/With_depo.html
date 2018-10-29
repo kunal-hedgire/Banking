@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/with/" method="POST">
+<center>
+     {% csrf_token %}
+    <div class="form-group row">
+        <h1>Account</h1>
+    </div>
+<div class="form-group row">
+    <br><br><br><br>
+    <label class="col-sm-2 col-form-label">Account Number:</label>
+    <div class="col-sm-4">
+      {{ form.accountNumber }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <br><br><br><br>
+    <label class="col-sm-2 col-form-label">Amount:</label>
+    <div class="col-sm-4">
+      {{ form.transactionAmount }}
+    </div>
+  </div>
+
+
+<div class="form-group row">
+    <br><br><br><br>
+    <label class="col-sm-2 col-form-label">Transcation Type:</label>
+    <div class="col-sm-4">
+      {{ form.transactionMethod}}
+    </div>
+  </div>
+<div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </center>
+</form>
+
+
+</body>
+</html>
